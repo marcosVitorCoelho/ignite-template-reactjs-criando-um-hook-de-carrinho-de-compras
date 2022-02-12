@@ -227,7 +227,7 @@ describe('useCart Hook', () => {
       result.current.addProduct(productId);
     });
 
-    await waitFor(
+    waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
           'Quantidade solicitada fora de estoque'
@@ -348,7 +348,7 @@ describe('useCart Hook', () => {
       result.current.updateProductAmount({ amount: 3, productId });
     });
 
-    await waitFor(
+    waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
           'Erro na alteração de quantidade do produto'
